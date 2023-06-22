@@ -1,0 +1,57 @@
+<html>
+<body>
+	<h3>Windows Batch File Examples</h3>
+
+	<p>
+		A collection of Microsoft DOS/Windows batch files.
+	</p>
+
+	<div id="divExamples"></div>
+
+	<script type="text/javascript">
+
+		var d = document;
+
+		var exampleNames =
+		[
+			"Array",
+			"Goto",
+			"If",
+			"Input",
+			"Loop",
+			"StringLength",
+			"Substring-Find_in_Superstring",
+			"Substring-Literal_Pos_and_Length",
+			"Substring-Variable_Pos_and_Literal_Length",
+			"Wait"
+		];
+
+		var exampleDirectoryPath = "../Examples/";
+
+		var listExamples = d.createElement("ul");
+
+		exampleNames.forEach
+		(
+			x =>
+			{
+				var link = d.createElement("a");
+				link.innerHTML = x;
+				link.href =
+					exampleDirectoryPath
+					+ x
+					+ ".bat";
+				var listItem = d.createElement("li");
+				listItem.appendChild(link);
+				listExamples.appendChild(listItem);
+			}
+		);
+
+		var divExamples =
+			d.getElementById("divExamples");
+		divExamples.innerHTML = "";
+		divExamples.appendChild(listExamples);
+
+	</script>
+
+</body>
+</html>
